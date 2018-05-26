@@ -1,0 +1,26 @@
+steps to project:
+1. create a controleler - php artisan make:controller TodosController --resource
+2 . create a database in phpmyadmin
+3. create a model - php artisan make:model Todo -m . with -m creates the migration file
+4. Create todos table
+
+php artisan tinker    --starts tinker
+
+$todo = new App\Todo();     - creates a new instnce of todo
+
+$todo->text="Todo One"; - saves data into the text column of todo table
+=> "Todo One"
+
+$todo->body = "This is my first todo";  - saves data into the body column of todo table
+=> "This is my first todo"
+
+$todo->due = "Monday May 7";  -saves data into the due column of todo table
+=> "Monday May 7"
+
+$todo->save(); - persist data into the database
+=> true
+
+App\Todo::all();    -View data in todo table
+
+To find a single row in the todo table
+App\Todo::find(1)
